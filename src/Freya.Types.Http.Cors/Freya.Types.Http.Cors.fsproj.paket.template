@@ -1,0 +1,23 @@
+type project
+id
+    Freya.Types.Http.Cors
+title
+    Freya.Types.Http.Cors
+description
+    Types for working with the HTTP CORS specification
+tags
+    functional, web, f#, freya, types, http, cors
+version
+    4.0.0-b001
+owners
+    Andrew Cherry, Ryan Riley
+authors
+    Andrew Cherry, Ryan Riley
+copyright
+    Copyright Xyncro Ltd 2016
+projectUrl
+    https://xyncro.tech/freya
+licenseUrl
+    https://github.com/xyncro/freya-types/blob/master/LICENSE.md
+requireLicenseAcceptance
+    false

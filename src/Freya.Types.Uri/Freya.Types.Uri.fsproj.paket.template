@@ -1,0 +1,23 @@
+type project
+id
+    Freya.Types.Uri
+title
+    Freya.Types.Uri
+description
+    Types for working with the URI specification
+tags
+    functional, web, f#, freya, types, uri
+version
+    4.0.0-b001
+owners
+    Andrew Cherry, Ryan Riley
+authors
+    Andrew Cherry, Ryan Riley
+copyright
+    Copyright Xyncro Ltd 2016
+projectUrl
+    https://xyncro.tech/freya
+licenseUrl
+    https://github.com/xyncro/freya-types/blob/master/LICENSE.md
+requireLicenseAcceptance
+    false
