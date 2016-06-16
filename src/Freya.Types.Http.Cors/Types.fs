@@ -47,23 +47,7 @@ type Origin =
     override x.ToString () =
         Origin.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Origin.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Origin.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Origin.tryParse
-
-and OriginListOrNull =
+ and OriginListOrNull =
     | Origins of SerializedOrigin list
     | Null
 
@@ -81,7 +65,7 @@ and OriginListOrNull =
         { Parse = originListOrNullP
           Format = originListOrNullF }
 
-and SerializedOrigin =
+ and SerializedOrigin =
     | SerializedOrigin of Scheme * Host * Port option
 
     static member Mapping =
@@ -148,23 +132,7 @@ type AccessControlAllowOrigin =
     override x.ToString () =
         AccessControlAllowOrigin.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlAllowOrigin.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlAllowOrigin.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlAllowOrigin.tryParse
-
-and AccessControlAllowOriginRange =
+ and AccessControlAllowOriginRange =
     | Origins of OriginListOrNull
     | Any
 
@@ -199,22 +167,6 @@ type AccessControlAllowCredentials =
     override x.ToString () =
         AccessControlAllowCredentials.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlAllowCredentials.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlAllowCredentials.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlAllowCredentials.tryParse
-
 (* Access-Control-Expose-Headers
 
    Taken from W3C Recommendation on CORS, Section 5.3 Access-Control-Expose-Headers
@@ -245,22 +197,6 @@ type AccessControlExposeHeaders =
 
     override x.ToString () =
         AccessControlExposeHeaders.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlExposeHeaders.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlExposeHeaders.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlExposeHeaders.tryParse
 
 (* Access-Control-Max-Age
 
@@ -293,22 +229,6 @@ type AccessControlMaxAge =
     override x.ToString () =
         AccessControlMaxAge.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlMaxAge.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlMaxAge.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlMaxAge.tryParse
-
 (* Access-Control-Allow-Methods
 
    Taken from W3C Recommendation on CORS, Section 5.5 Access-Control-Allow-Methods
@@ -339,22 +259,6 @@ type AccessControlAllowMethods =
 
     override x.ToString () =
         AccessControlAllowMethods.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlAllowMethods.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlAllowMethods.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlAllowMethods.tryParse
 
 (* Access-Control-Allow-Headers
 
@@ -387,22 +291,6 @@ type AccessControlAllowHeaders =
     override x.ToString () =
         AccessControlAllowHeaders.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlAllowHeaders.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlAllowHeaders.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlAllowHeaders.tryParse
-
 (* Access-Control-Request-Method
 
    Taken from W3C Recommendation on CORS, Section 5.8 Access-Control-Request-Method
@@ -434,22 +322,6 @@ type AccessControlRequestMethod =
     override x.ToString () =
         AccessControlRequestMethod.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlRequestMethod.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlRequestMethod.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlRequestMethod.tryParse
-
 (* Access-Control-Request-Headers
 
    Taken from W3C Recommendation on CORS, Section 5.9 Access-Control-Request-Headers
@@ -480,19 +352,3 @@ type AccessControlRequestHeaders =
 
     override x.ToString () =
         AccessControlRequestHeaders.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AccessControlRequestHeaders.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AccessControlRequestHeaders.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AccessControlRequestHeaders.tryParse

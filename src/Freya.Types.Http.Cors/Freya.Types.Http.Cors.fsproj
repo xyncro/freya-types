@@ -58,6 +58,7 @@
   -->
   <ItemGroup>
     <Compile Include="Types.fs" />
+    <Compile Include="Obsolete.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

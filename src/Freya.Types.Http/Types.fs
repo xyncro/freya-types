@@ -52,22 +52,6 @@ type PartialUri =
     override x.ToString () =
         PartialUri.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        PartialUri.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        PartialUri.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        PartialUri.tryParse
-
 (* HTTP Version
 
    Taken from RFC 7230, Section 3.1 Request Line
@@ -104,22 +88,6 @@ type HttpVersion =
     override x.ToString () =
         HttpVersion.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        HttpVersion.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        HttpVersion.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        HttpVersion.tryParse
-
 (* Content-Length
 
    Taken from RFC 7230, Section 3.3.2 Content-Length
@@ -150,22 +118,6 @@ type ContentLength =
 
     override x.ToString () =
         ContentLength.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        ContentLength.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        ContentLength.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        ContentLength.tryParse
 
 (* Host
 
@@ -204,22 +156,6 @@ type Host =
     override x.ToString () =
         Host.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Host.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Host.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Host.tryParse
-
 (* Connection
 
    Taken from RFC 7230, Section 6.1 Connection
@@ -250,22 +186,6 @@ type Connection =
 
     override x.ToString () =
         Connection.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Connection.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Connection.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Connection.tryParse
 
 and ConnectionOption =
     | ConnectionOption of string
@@ -329,35 +249,7 @@ type MediaType =
     override x.ToString () =
         MediaType.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use type_ instead.")>]
-    static member Type_ =
-        MediaType.type_
-
-    [<Obsolete ("Use subType_ instead.")>]
-    static member SubType_ =
-        MediaType.subType_
-
-    [<Obsolete ("Use parameters_ instead.")>]
-    static member Parameters_ =
-        MediaType.parameters_
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        MediaType.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        MediaType.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        MediaType.tryParse
-
-and Parameters =
+ and Parameters =
     | Parameters of Map<string, string>
 
     static member Mapping =
@@ -383,18 +275,10 @@ and Parameters =
     static member parameters_ =
         (fun (Parameters x) -> x), (Parameters)
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use parameters_ instead.")>]
-    static member Parameters_ =
-        Parameters.parameters_
-
-and Type =
+ and Type =
     | Type of string
 
-and SubType =
+ and SubType =
     | SubType of string
 
 (* Media-Type Presets *)
@@ -459,26 +343,6 @@ type ContentType =
     override x.ToString () =
         ContentType.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use mediaType_ instead.")>]
-    static member MediaType_ =
-        ContentType.mediaType_
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        ContentType.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        ContentType.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        ContentType.tryParse
-
 (* Content-Encoding
 
    Taken from RFC 7231, Section 3.1.2.2 Content-Encoding
@@ -510,23 +374,7 @@ type ContentEncoding =
     override x.ToString () =
         ContentEncoding.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        ContentEncoding.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        ContentEncoding.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        ContentEncoding.tryParse
-
-and ContentCoding =
+ and ContentCoding =
     | ContentCoding of string
 
 (* Content-Encoding Presets *)
@@ -576,22 +424,6 @@ type ContentLanguage =
     override x.ToString () =
         ContentLanguage.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        ContentLanguage.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        ContentLanguage.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        ContentLanguage.tryParse
-
 (* Content-Location
 
    Taken from RFC 7231, Section 3.1.4.2 Content-Location
@@ -626,23 +458,7 @@ type ContentLocation =
     override x.ToString () =
         ContentLocation.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        ContentLocation.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        ContentLocation.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        ContentLocation.tryParse
-
-and ContentLocationUri =
+ and ContentLocationUri =
     | Absolute of AbsoluteUri
     | Partial of PartialUri
 
@@ -699,18 +515,6 @@ type Method =
     override x.ToString () =
         Method.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Method.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Method.parse
-
 (* Expect
 
    Taken from RFC 7231, Section 5.1.1 Expect
@@ -742,23 +546,7 @@ type Expect =
     override x.ToString () =
         Expect.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Expect.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Expect.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Expect.tryParse
-
-and Continue =
+ and Continue =
     | Continue
 
 (* Max-Forwards
@@ -791,22 +579,6 @@ type MaxForwards =
 
     override x.ToString () =
         MaxForwards.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        MaxForwards.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        MaxForwards.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        MaxForwards.tryParse
 
 (* Quality Values
 
@@ -875,23 +647,7 @@ type Accept =
     override x.ToString () =
         Accept.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Accept.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Accept.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Accept.tryParse
-
-and AcceptableMedia =
+ and AcceptableMedia =
     | AcceptableMedia of MediaRange * AcceptParameters option
 
     static member Mapping =
@@ -909,7 +665,7 @@ and AcceptableMedia =
         { Parse = acceptableMediaP
           Format = acceptableMediaF }
 
-and MediaRange =
+ and MediaRange =
     | Closed of Type * SubType * Parameters
     | Partial of Type * Parameters
     | Open of Parameters
@@ -949,7 +705,7 @@ and MediaRange =
         { Parse = mediaRangeP
           Format = mediaRangeF }
 
-and AcceptParameters =
+ and AcceptParameters =
     | AcceptParameters of Weight * AcceptExtensions
 
     static member Mapping =
@@ -965,7 +721,7 @@ and AcceptParameters =
         { Parse = acceptParamsP
           Format = acceptParamsF }
 
-and AcceptExtensions =
+ and AcceptExtensions =
     | Extensions of Map<string, string option>
 
     static member Mapping =
@@ -1016,23 +772,7 @@ type AcceptCharset =
     override x.ToString () =
         AcceptCharset.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AcceptCharset.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AcceptCharset.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AcceptCharset.tryParse
-
-and AcceptableCharset =
+ and AcceptableCharset =
     | AcceptableCharset of CharsetRange * Weight option
 
     static member Mapping =
@@ -1050,7 +790,7 @@ and AcceptableCharset =
         { Parse = acceptableCharsetP
           Format = acceptableCharsetF }
 
-and CharsetRange =
+ and CharsetRange =
     | Charset of Charset
     | Any
 
@@ -1074,7 +814,7 @@ and CharsetRange =
         { Parse = charsetRangeP
           Format = charsetRangeF }
 
-and Charset =
+ and Charset =
     | Charset of string
 
 (* Charset Presets *)
@@ -1126,23 +866,7 @@ type AcceptEncoding =
     override x.ToString () =
         AcceptEncoding.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AcceptEncoding.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AcceptEncoding.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AcceptEncoding.tryParse
-
-and AcceptableEncoding =
+ and AcceptableEncoding =
     | AcceptableEncoding of EncodingRange * Weight option
 
     static member Mapping =
@@ -1160,7 +884,7 @@ and AcceptableEncoding =
         { Parse = acceptableEncodingP
           Format = acceptableEncodingF }
 
-and EncodingRange =
+ and EncodingRange =
     | Coding of ContentCoding
     | Identity
     | Any
@@ -1223,23 +947,7 @@ type AcceptLanguage =
     override x.ToString () =
         AcceptLanguage.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        AcceptLanguage.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        AcceptLanguage.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        AcceptLanguage.tryParse
-
-and AcceptableLanguage =
+ and AcceptableLanguage =
     | AcceptableLanguage of LanguageRange * Weight option
 
     static member Mapping =
@@ -1291,23 +999,7 @@ type Referer =
     override x.ToString () =
         Referer.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Referer.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Referer.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Referer.tryParse
-    
-and RefererUri =
+ and RefererUri =
     | Absolute of AbsoluteUri
     | Partial of PartialUri
 
@@ -1324,14 +1016,11 @@ module HttpDate =
     let private dateTimeAdjustment =
         DateTimeStyles.AdjustToUniversal
 
-    [<RequireQualifiedAccess>]
-    module Parse =
-
-        let httpDate p : Parser<DateTime, unit> =
-            p >>= (fun s ->
-                match DateTime.TryParse (s, dateTimeFormat, dateTimeAdjustment) with
-                | true, d -> preturn d
-                | _ -> pzero)
+    let parse p : Parser<DateTime, unit> =
+        p >>= (fun s ->
+            match DateTime.TryParse (s, dateTimeFormat, dateTimeAdjustment) with
+            | true, d -> preturn d
+            | _ -> pzero)
 
 (* Date
 
@@ -1344,7 +1033,7 @@ type Date =
     static member Mapping =
 
         let dateP =
-            HttpDate.Parse.httpDate (restOfLine false) |>> Date.Date
+            HttpDate.parse (restOfLine false) |>> Date.Date
 
         let dateF =
             function | Date.Date x -> Formatting.append (x.ToString "r")
@@ -1363,22 +1052,6 @@ type Date =
 
     override x.ToString () =
         Date.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Date.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Date.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Date.tryParse
 
 (* Location
 
@@ -1411,22 +1084,6 @@ type Location =
     override x.ToString () =
         Location.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Location.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Location.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Location.tryParse
-
 (* Retry-After
 
    Taken from RFC 7231, Section 7.1.3. Retry-After
@@ -1439,7 +1096,7 @@ type RetryAfter =
 
         let retryAfterP =
             choice [
-                attempt (HttpDate.Parse.httpDate (restOfLine false)) |>> (Date >> RetryAfter)
+                attempt (HttpDate.parse (restOfLine false)) |>> (Date >> RetryAfter)
                 puint32 |>> (float >> TimeSpan.FromSeconds >> Delay >> RetryAfter) ]
 
         let retryAfterF =
@@ -1461,23 +1118,7 @@ type RetryAfter =
     override x.ToString () =
         RetryAfter.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        RetryAfter.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        RetryAfter.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        RetryAfter.tryParse
-
-and RetryAfterChoice =
+ and RetryAfterChoice =
     | Date of DateTime
     | Delay of TimeSpan
 
@@ -1512,22 +1153,6 @@ type Allow =
     override x.ToString () =
         Allow.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Allow.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Allow.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Allow.tryParse
-
 (* RFC 7232
 
    Types, parsers and formatters implemented to mirror the semantics of
@@ -1546,7 +1171,7 @@ type LastModified =
     static member Mapping =
 
         let lastModifiedP =
-            HttpDate.Parse.httpDate (restOfLine false) |>> LastModified
+            HttpDate.parse (restOfLine false) |>> LastModified
 
         let lastModifiedF =
             function | LastModified x -> Formatting.append (x.ToString "r")
@@ -1565,22 +1190,6 @@ type LastModified =
 
     override x.ToString () =
         LastModified.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        LastModified.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        LastModified.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        LastModified.tryParse
 
 (* ETag
 
@@ -1613,23 +1222,7 @@ type ETag =
     override x.ToString () =
         ETag.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        ETag.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        ETag.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        ETag.tryParse
-
-and EntityTag =
+ and EntityTag =
     | Strong of string
     | Weak of string
 
@@ -1691,23 +1284,7 @@ type IfMatch =
     override x.ToString () =
         IfMatch.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        IfMatch.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        IfMatch.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        IfMatch.tryParse
-
-and IfMatchChoice =
+ and IfMatchChoice =
     | EntityTags of EntityTag list
     | Any
 
@@ -1745,23 +1322,7 @@ type IfNoneMatch =
     override x.ToString () =
         IfNoneMatch.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        IfNoneMatch.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        IfNoneMatch.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        IfNoneMatch.tryParse
-
-and IfNoneMatchChoice =
+ and IfNoneMatchChoice =
     | EntityTags of EntityTag list
     | Any
 
@@ -1776,7 +1337,7 @@ type IfModifiedSince =
     static member Mapping =
 
         let ifModifiedSinceP =
-            HttpDate.Parse.httpDate (restOfLine false) |>> IfModifiedSince
+            HttpDate.parse (restOfLine false) |>> IfModifiedSince
 
         let ifModifiedSinceF =
             function | IfModifiedSince x -> Formatting.append (x.ToString "r")
@@ -1796,22 +1357,6 @@ type IfModifiedSince =
     override x.ToString () =
         IfModifiedSince.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        IfModifiedSince.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        IfModifiedSince.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        IfModifiedSince.tryParse
-
 (* If-Unmodified-Since
 
    Taken from RFC 7232, Section 3.4, If-Unmodified-Since
@@ -1823,7 +1368,7 @@ type IfUnmodifiedSince =
     static member Mapping =
 
         let ifUnmodifiedSinceP =
-            HttpDate.Parse.httpDate (restOfLine false) |>> IfUnmodifiedSince
+            HttpDate.parse (restOfLine false) |>> IfUnmodifiedSince
 
         let ifUnmodifiedSinceF =
             function | IfUnmodifiedSince x -> Formatting.append (x.ToString "r")
@@ -1842,22 +1387,6 @@ type IfUnmodifiedSince =
 
     override x.ToString () =
         IfUnmodifiedSince.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        IfUnmodifiedSince.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        IfUnmodifiedSince.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        IfUnmodifiedSince.tryParse
 
 (* RFC 7233
 
@@ -1878,7 +1407,7 @@ type IfRange =
 
         let ifRangeP =
             (EntityTag.Mapping.Parse |>> (EntityTag >> IfRange)) <|> 
-                                         (HttpDate.Parse.httpDate (restOfLine false) |>> (Date >> IfRange))
+                                         (HttpDate.parse (restOfLine false) |>> (Date >> IfRange))
 
         let ifRangeF =
             function | IfRange (Date x) -> Formatting.append (x.ToString "r")
@@ -1899,23 +1428,7 @@ type IfRange =
     override x.ToString () =
         IfRange.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        IfRange.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        IfRange.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        IfRange.tryParse
-
-and IfRangeChoice =
+ and IfRangeChoice =
     | Date of DateTime
     | EntityTag of EntityTag
 
@@ -1957,22 +1470,6 @@ type Age =
     override x.ToString () =
         Age.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Age.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Age.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Age.tryParse
-
 (* Cache-Control
 
    Taken from RFC 7234 Section 5.2 Cache-Control
@@ -2009,23 +1506,7 @@ type CacheControl =
     override x.ToString () =
         CacheControl.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        CacheControl.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        CacheControl.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        CacheControl.tryParse
-
-and CacheDirective =
+ and CacheDirective =
     | MaxAge of TimeSpan
     | MaxStale of TimeSpan
     | MinFresh of TimeSpan
@@ -2089,7 +1570,7 @@ type Expires =
     static member Mapping =
 
         let expiresP =
-            HttpDate.Parse.httpDate (restOfLine false) |>> Expires
+            HttpDate.parse (restOfLine false) |>> Expires
 
         let expiresF =
             function | Expires x -> Formatting.append (x.ToString "r")
@@ -2108,19 +1589,3 @@ type Expires =
 
     override x.ToString () =
         Expires.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Expires.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Expires.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Expires.tryParse

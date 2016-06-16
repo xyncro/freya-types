@@ -61,31 +61,7 @@ type Pair =
     override x.ToString () =
         Pair.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use name_ instead.")>]
-    static member Name_ =
-        Pair.name_
-
-    [<Obsolete ("Use value_ instead.")>]
-    static member Value_ =
-        Pair.value_
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Pair.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Pair.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Pair.tryParse
-
-and Name =
+ and Name =
     | Name of string
 
     static member Mapping =
@@ -104,15 +80,7 @@ and Name =
     static member name_ =
         (fun (Name n) -> n), (Name)
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use name_ instead.")>]
-    static member Name_ =
-        Name.name_
-
-and Value =
+ and Value =
     | Value of string
 
     static member Mapping =
@@ -140,14 +108,6 @@ and Value =
 
     static member value_ =
         (fun (Value v) -> v), (Value)
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use value_ instead.")>]
-    static member Value_ =
-        Value.value_
 
 (* Set-Cookie
 
@@ -194,31 +154,7 @@ type SetCookie =
     override x.ToString () =
         SetCookie.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use pair_ instead.")>]
-    static member Pair_ =
-        SetCookie.pair_
-
-    [<Obsolete ("Use attributes_ instead.")>]
-    static member Attributes_ =
-        SetCookie.attributes_
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        SetCookie.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        SetCookie.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        SetCookie.tryParse
-
-and Attributes =
+ and Attributes =
     | Attributes of Attribute list
 
     static member Mapping =
@@ -238,15 +174,7 @@ and Attributes =
     static member attributes_ =
         (fun (Attributes a) -> a), (Attributes)
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use attributes_ instead.")>]
-    static member Attributes_ =
-        Attributes.attributes_
-
-and Attribute =
+ and Attribute =
     | Expires of DateTime
     | MaxAge of TimeSpan
     | Domain of Domain
@@ -264,7 +192,7 @@ and Attribute =
             manySatisfy (int >> isNonCtlSemiOctet)
 
         let expiresP =
-            skipString "Expires=" >>. (HttpDate.Parse.httpDate (manySatisfy ((<>) ';'))) |>> Expires
+            skipString "Expires=" >>. (HttpDate.parse (manySatisfy ((<>) ';'))) |>> Expires
 
         let maxAgeP =
             skipString "Max-Age=" >>. puint32 |>> (float >> TimeSpan.FromSeconds >> MaxAge)
@@ -303,7 +231,7 @@ and Attribute =
         { Parse = attributeP
           Format = attributeF }
 
-and Domain =
+ and Domain =
     | IPv4 of string
     | IPv6 of string
     | SubDomain of string
@@ -384,34 +312,6 @@ and Domain =
     override x.ToString () =
         Domain.format x
 
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use ipv4_ instead.")>]
-    static member IPv4_ =
-        Domain.ipv4_
-
-    [<Obsolete ("Use ipv6_ instead.")>]
-    static member IPv6_ =
-        Domain.ipv6_
-
-    [<Obsolete ("Use subDomain_ instead.")>]
-    static member SubDomain_ =
-        Domain.subDomain_
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Domain.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Domain.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Domain.tryParse
-
 (* Cookie
 
    Taken from RFC 6265, Section 4.2 Cookie
@@ -449,23 +349,3 @@ type Cookie =
 
     override x.ToString () =
         Cookie.format x
-
-    (* Obsolete
-
-       To be removed in 4.0. *)
-
-    [<Obsolete ("Use pairs_ instead.")>]
-    static member Pairs_ =
-        Cookie.pairs_
-
-    [<Obsolete ("Use format instead.")>]
-    static member Format =
-        Cookie.format
-
-    [<Obsolete ("Use parse instead.")>]
-    static member Parse =
-        Cookie.parse
-
-    [<Obsolete ("Use tryParse instead.")>]
-    static member TryParse =
-        Cookie.tryParse

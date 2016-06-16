@@ -61,6 +61,7 @@
     <Compile Include="Grammar.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="Semantics.fs" />
+    <Compile Include="Obsolete.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
