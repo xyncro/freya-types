@@ -47,3 +47,14 @@ type AcceptPatch =
 
     override x.ToString () =
         AcceptPatch.format x
+
+(* Methods
+
+   Shorthand for the custom HTTP Method with the value PATCH, not a formal
+   part of an RFC, but provided for convenience. *)
+
+[<AutoOpen>]
+module Methods =
+
+    let PATCH =
+        Method.Custom "PATCH"
