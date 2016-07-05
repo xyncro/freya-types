@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln", "sln", "{47E89AC0-6A5B-4982-9DF6-2BA0DC270C71}"
 EndProject
@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{3D
 		src\Freya.Types\Freya.Types.fsproj.paket.template = src\Freya.Types\Freya.Types.fsproj.paket.template
 		src\Freya.Types.Http.Cors\Freya.Types.Http.Cors.fsproj.paket.template = src\Freya.Types.Http.Cors\Freya.Types.Http.Cors.fsproj.paket.template
 		src\Freya.Types.Http\Freya.Types.Http.fsproj.paket.template = src\Freya.Types.Http\Freya.Types.Http.fsproj.paket.template
+		src\Freya.Types.Http.Patch\Freya.Types.Http.Patch.fsproj.paket.template = src\Freya.Types.Http.Patch\Freya.Types.Http.Patch.fsproj.paket.template
 		src\Freya.Types.Http.State\Freya.Types.Http.State.fsproj.paket.template = src\Freya.Types.Http.State\Freya.Types.Http.State.fsproj.paket.template
 		src\Freya.Types.Language\Freya.Types.Language.fsproj.paket.template = src\Freya.Types.Language\Freya.Types.Language.fsproj.paket.template
 		src\Freya.Types.Uri\Freya.Types.Uri.fsproj.paket.template = src\Freya.Types.Uri\Freya.Types.Uri.fsproj.paket.template
@@ -38,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08B5253E-E2B
 		src\Freya.Types\Freya.Types.fsproj.paket.references = src\Freya.Types\Freya.Types.fsproj.paket.references
 		src\Freya.Types.Http.Cors\Freya.Types.Http.Cors.fsproj.paket.references = src\Freya.Types.Http.Cors\Freya.Types.Http.Cors.fsproj.paket.references
 		src\Freya.Types.Http\Freya.Types.Http.fsproj.paket.references = src\Freya.Types.Http\Freya.Types.Http.fsproj.paket.references
+		src\Freya.Types.Http.Patch\Freya.Types.Http.Patch.fsproj.paket.references = src\Freya.Types.Http.Patch\Freya.Types.Http.Patch.fsproj.paket.references
 		src\Freya.Types.Http.State\Freya.Types.Http.State.fsproj.paket.references = src\Freya.Types.Http.State\Freya.Types.Http.State.fsproj.paket.references
 		src\Freya.Types.Language\Freya.Types.Language.fsproj.paket.references = src\Freya.Types.Language\Freya.Types.Language.fsproj.paket.references
 		src\Freya.Types.Uri\Freya.Types.Uri.fsproj.paket.references = src\Freya.Types.Uri\Freya.Types.Uri.fsproj.paket.references
@@ -80,6 +82,8 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Freya.Types.Http.State.Tests", "tests\Freya.Types.Http.State.Tests\Freya.Types.Http.State.Tests.fsproj", "{3199EB0A-814E-4B07-A891-DC62663A49A1}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Freya.Types.Language.Tests", "tests\Freya.Types.Language.Tests\Freya.Types.Language.Tests.fsproj", "{4A62F937-3AB9-4725-9093-257C91ABB907}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Freya.Types.Http.Patch", "src\Freya.Types.Http.Patch\Freya.Types.Http.Patch.fsproj", "{F954C450-74E8-4C0E-AE15-F2CEE2C81342}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +147,10 @@ Global
 		{4A62F937-3AB9-4725-9093-257C91ABB907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A62F937-3AB9-4725-9093-257C91ABB907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A62F937-3AB9-4725-9093-257C91ABB907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F954C450-74E8-4C0E-AE15-F2CEE2C81342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F954C450-74E8-4C0E-AE15-F2CEE2C81342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F954C450-74E8-4C0E-AE15-F2CEE2C81342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F954C450-74E8-4C0E-AE15-F2CEE2C81342}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,5 +175,6 @@ Global
 		{6FAA9344-61DE-4FDC-8EB2-9EF6BD1EC46E} = {1E748272-4EC3-464C-8DD3-90A21E8EB223}
 		{3199EB0A-814E-4B07-A891-DC62663A49A1} = {1E748272-4EC3-464C-8DD3-90A21E8EB223}
 		{4A62F937-3AB9-4725-9093-257C91ABB907} = {1E748272-4EC3-464C-8DD3-90A21E8EB223}
+		{F954C450-74E8-4C0E-AE15-F2CEE2C81342} = {7C140BB9-5D0F-4D6D-A34E-3BE5CBC2A5A5}
 	EndGlobalSection
 EndGlobal

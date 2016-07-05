@@ -1,0 +1,23 @@
+type project
+id
+    Freya.Types.Http.Patch
+title
+    Freya.Types.Http.Patch
+description
+    Types for working with the HTTP Patch specification
+tags
+    functional, web, f#, freya, types, http, patch
+version
+    3.0.0-b301
+owners
+    Andrew Cherry, Ryan Riley
+authors
+    Andrew Cherry, Ryan Riley
+copyright
+    Copyright Xyncro Ltd 2016
+projectUrl
+    https://xyncro.tech/freya
+licenseUrl
+    https://github.com/xyncro/freya-types/blob/master/LICENSE.md
+requireLicenseAcceptance
+    false
