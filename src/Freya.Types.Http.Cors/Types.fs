@@ -91,6 +91,18 @@ type Origin =
         { Parse = serializedOriginP
           Format = serializedOriginF }
 
+    static member format =
+        Mapping.format SerializedOrigin.Mapping
+
+    static member parse =
+        Mapping.parse SerializedOrigin.Mapping
+
+    static member tryParse =
+        Mapping.tryParse SerializedOrigin.Mapping
+
+    override x.ToString () =
+        SerializedOrigin.format x
+
 (* W3C Recommendation on CORS
 
    Types, parsers and formatters implemented to mirror the specification of 

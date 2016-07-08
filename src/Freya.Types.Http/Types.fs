@@ -665,6 +665,18 @@ type Accept =
         { Parse = acceptableMediaP
           Format = acceptableMediaF }
 
+    static member format =
+        Mapping.format AcceptableMedia.Mapping
+
+    static member parse =
+        Mapping.parse AcceptableMedia.Mapping
+
+    static member tryParse =
+        Mapping.tryParse AcceptableMedia.Mapping
+
+    override x.ToString () =
+        AcceptableMedia.format x
+
  and MediaRange =
     | Closed of Type * SubType * Parameters
     | Partial of Type * Parameters
