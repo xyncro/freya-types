@@ -19,19 +19,18 @@ open FParsec
    NOTE: RFC 5789 refers to the mediatypes acceptable using the definitions
    current within RFC 2616, the original HTTP standard. This has been
    superceded and here it has been decided to use the more modern formulation
-   of mediatypes (or acceptable media ranges) as defined in RFC 7231, and
-   mirroring the modern definition of the Accept header. *)
+   of mediatypes as defined in RFC 7231. *)
 
 type AcceptPatch =
-    | AcceptPatch of AcceptableMedia list
+    | AcceptPatch of MediaType list
 
     static member Mapping =
 
         let acceptPatchP =
-            Grammar.infix AcceptableMedia.Mapping.Parse (skipChar ',') |>> AcceptPatch
+            Grammar.infix MediaType.Mapping.Parse (skipChar ',') |>> AcceptPatch
 
         let acceptPatchF =
-            function | AcceptPatch x -> Formatting.join AcceptableMedia.Mapping.Format (Formatting.append ",") x
+            function | AcceptPatch x -> Formatting.join MediaType.Mapping.Format (Formatting.append ",") x
 
         { Parse = acceptPatchP
           Format = acceptPatchF }
