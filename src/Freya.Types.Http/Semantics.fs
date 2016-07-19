@@ -16,7 +16,7 @@ open Freya.Types.Language
 module Charset =
 
     let private max (Charset c) =
-        function | AcceptableCharset (CharsetRange.Charset (Charset c'), _) when String.equalsIgnoreCase c c' -> Some 0
+        function | AcceptableCharset (CharsetRange.Charset (Charset c'), _) when String.equalsCI c c' -> Some 0
                  | AcceptableCharset (CharsetRange.Any, _) -> Some 1
                  | _ -> None
 
@@ -36,13 +36,12 @@ module Charset =
                       | _ -> None) y)
 
     let private run requested =
-            map requested 
-            >> sort
-            >> choose
+            map requested
+         >> sort
+         >> choose
 
-    let negotiate supported =
-        function | Some x -> Some (run x supported)
-                 | _ -> None
+    let negotiate supported acceptable =
+        run (Set.toList acceptable) (Set.toList supported)
 
 (* ContentCoding *)
 
@@ -53,7 +52,7 @@ module ContentCoding =
     // TODO: Better ContentCoding Negotiation - proper support of identity, etc.
 
     let private max (ContentCoding c) =
-        function | AcceptableEncoding (EncodingRange.Coding (ContentCoding c'), _) when String.equalsIgnoreCase c c' -> Some 0
+        function | AcceptableEncoding (EncodingRange.Coding (ContentCoding c'), _) when String.equalsCI c c' -> Some 0
                  | AcceptableEncoding (EncodingRange.Any, _) -> Some 1
                  | _ -> None
 
@@ -74,12 +73,11 @@ module ContentCoding =
 
     let private run requested =
             map requested 
-            >> sort
-            >> choose
+         >> sort
+         >> choose
 
-    let negotiate supported =
-        function | Some x -> Some (run x supported)
-                 | _ -> None
+    let negotiate supported acceptable =
+        run (Set.toList acceptable) (Set.toList supported)
 
 (* Language *)
 
@@ -88,8 +86,8 @@ module ContentCoding =
 module Language =
 
     (* Note: This is intended to approximate the semantics
-        of Basic Filtering as specified in Section 3.3.1 of RFC 4647.
-        See [http://tools.ietf.org/html/rfc4647#section-3.3.1] *)
+       of Basic Filtering as specified in Section 3.3.1 of RFC 4647.
+       See [http://tools.ietf.org/html/rfc4647#section-3.3.1] *)
 
     (* Negotiation *)
 
@@ -116,7 +114,7 @@ module Language =
             variant ]
 
     let private eq tag =
-        Seq.zip (reify tag) >> Seq.forall ((<||) String.equalsIgnoreCase)
+        Seq.zip (reify tag) >> Seq.forall ((<||) String.equalsCI)
 
     let private sort =
         List.sortBy (function | AcceptableLanguage (_, Some (Weight w)) -> 1. - w
@@ -132,15 +130,14 @@ module Language =
     
     let private run supported =
             sort
-            >> filter
-            >> map supported
-            >> Seq.concat
-            >> Seq.distinct
-            >> Seq.toList
+         >> filter
+         >> map supported
+         >> Seq.concat
+         >> Seq.distinct
+         >> Seq.toList
 
-    let negotiate supported =
-        function | Some x -> Some (run supported x)
-                 | _ -> None
+    let negotiate supported acceptable =
+        run (Set.toList acceptable) (Set.toList supported)
 
 (* MediaType *)
 
@@ -149,8 +146,8 @@ module Language =
 module MediaType =
 
     let private max (MediaType (Type t, SubType s, _)) =
-        function | AcceptableMedia (MediaRange.Closed (Type t', SubType s', _), _) when String.equalsIgnoreCase t t' && String.equalsIgnoreCase s s' -> Some 0
-                 | AcceptableMedia (MediaRange.Partial (Type t', _), _) when String.equalsIgnoreCase t t' -> Some 1
+        function | AcceptableMedia (MediaRange.Closed (Type t', SubType s', _), _) when String.equalsCI t t' && String.equalsCI s s' -> Some 0
+                 | AcceptableMedia (MediaRange.Partial (Type t', _), _) when String.equalsCI t t' -> Some 1
                  | AcceptableMedia (MediaRange.Open (_), _) -> Some 2
                  | _ -> None
 
@@ -171,9 +168,8 @@ module MediaType =
 
     let private run requested =
             map requested 
-            >> sort
-            >> choose
+         >> sort
+         >> choose
 
-    let negotiate supported =
-        function | Some x -> Some (run x supported)
-                 | _ -> None
+    let negotiate supported acceptable =
+        run (Set.toList acceptable) (Set.toList supported)
