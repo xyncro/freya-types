@@ -137,7 +137,7 @@ module Language =
          >> Seq.toList
 
     let negotiate supported acceptable =
-        run (Set.toList acceptable) (Set.toList supported)
+        run (Set.toList supported) (Set.toList acceptable)
 
 (* MediaType *)
 
