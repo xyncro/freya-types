@@ -1,14 +1,14 @@
 type project
 id
-    Freya.Types.Http
+    Freya.Types.Language
 title
-    Freya.Types.Http
+    Freya.Types.Language
 description
-    Types for working with the HTTP specifications
+    Types for working with the Language specification
 tags
-    functional, web, f#, freya, types, http
+    functional, web, f#, freya, types, language
 version
-    3.0.0-b304
+    3.0.0-rc01
 owners
     Andrew Cherry, Ryan Riley
 authors

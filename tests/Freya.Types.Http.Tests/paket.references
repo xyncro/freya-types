@@ -1,4 +1,6 @@
-﻿FParsec
+﻿group Common
+
+  FParsec
 
 group Test
 

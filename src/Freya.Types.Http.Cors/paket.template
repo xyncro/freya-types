@@ -1,14 +1,14 @@
 type project
 id
-    Freya.Types.Uri.Template
+    Freya.Types.Http.Cors
 title
-    Freya.Types.Uri.Template
+    Freya.Types.Http.Cors
 description
-    Types for working with the URI Template specification
+    Types for working with the HTTP CORS specification
 tags
-    functional, web, f#, freya, types, uri, template
+    functional, web, f#, freya, types, http, cors
 version
-    3.0.0-b301
+    3.0.0-rc01
 owners
     Andrew Cherry, Ryan Riley
 authors

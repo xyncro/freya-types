@@ -1,14 +1,14 @@
 type project
 id
-    Freya.Types.Http.Cors
+    Freya.Types.Http.State
 title
-    Freya.Types.Http.Cors
+    Freya.Types.Http.State
 description
-    Types for working with the HTTP CORS specification
+    Types for working with the HTTP State (Cookies) specification
 tags
-    functional, web, f#, freya, types, http, cors
+    functional, web, f#, freya, types, http, state, cookies
 version
-    3.0.0-b303
+    3.0.0-rc01
 owners
     Andrew Cherry, Ryan Riley
 authors

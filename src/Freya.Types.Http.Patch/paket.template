@@ -1,14 +1,14 @@
 type project
 id
-    Freya.Types
+    Freya.Types.Http.Patch
 title
-    Freya.Types
+    Freya.Types.Http.Patch
 description
-    Core functions and types for working with the Freya Web type system
+    Types for working with the HTTP Patch specification
 tags
-    functional, web, f#, freya, types
+    functional, web, f#, freya, types, http, patch
 version
-    3.0.0-b301
+    3.0.0-rc01
 owners
     Andrew Cherry, Ryan Riley
 authors
