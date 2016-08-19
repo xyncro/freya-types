@@ -90,6 +90,9 @@ module Rendering =
 type UriTemplate =
     | UriTemplate of UriTemplatePart list
 
+    static member uriTemplate_ =
+        (fun (UriTemplate x) -> x), (fun x -> UriTemplate (x))
+
     static member Mapping =
 
         let uriTemplateP =
@@ -147,6 +150,12 @@ type UriTemplate =
     | Literal of Literal
     | Expression of Expression
 
+    static member literal_ =
+        (function | Literal l -> Some l | _ -> None), (Literal)
+
+    static member expression_ =
+        (function | Expression e -> Some e | _ -> None), (Expression)
+
     static member Mapping =
 
         let uriTemplatePartP =
@@ -183,6 +192,7 @@ type UriTemplate =
 
     member x.Match part =
         Matching.execute UriTemplatePart.Matching.Match part x
+
  and Literal =
     | Literal of string
 
