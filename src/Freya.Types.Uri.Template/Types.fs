@@ -1,6 +1,5 @@
 ﻿namespace Freya.Types.Uri.Template
 
-open System
 open System.Text
 open Freya.Types
 open Freya.Types.Uri
@@ -196,6 +195,9 @@ type UriTemplate =
  and Literal =
     | Literal of string
 
+    static member literal_ =
+        (fun (Literal s) -> s), (Literal)
+
     static member Mapping =
 
         // TODO: Consider where isomorphisms are now required...
@@ -231,6 +233,12 @@ type UriTemplate =
 
  and Expression =
     | Expression of Operator option * VariableList
+
+    static member operator_ =
+        (fun (Expression (o, _)) -> o), (fun o (Expression (_, v)) -> Expression (o, v))
+
+    static member variableList_ =
+        (fun (Expression (_, v)) -> v), (fun v (Expression (o, _)) -> Expression (o, v))
 
     static member Mapping =
 
