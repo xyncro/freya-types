@@ -1,0 +1,8 @@
+﻿group Common
+
+  FParsec
+
+group Test
+
+  Unquote
+  xunit

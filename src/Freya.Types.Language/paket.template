@@ -1,0 +1,23 @@
+type project
+id
+    Freya.Types.Language
+title
+    Freya.Types.Language
+description
+    Types for working with the Language specification
+tags
+    functional, web, f#, freya, types, language
+version
+    3.0.0-rc01
+owners
+    Andrew Cherry, Ryan Riley
+authors
+    Andrew Cherry, Ryan Riley
+copyright
+    Copyright Xyncro Ltd 2016
+projectUrl
+    https://xyncro.tech/freya
+licenseUrl
+    https://github.com/xyncro/freya-types/blob/master/LICENSE.md
+requireLicenseAcceptance
+    false

@@ -1,0 +1,29 @@
+// Code
+
+group Common
+
+  source http://nuget.org/api/v2
+
+  nuget FParsec ~> 1
+
+// Build
+
+group Build
+
+  framework: >= net45
+  source http://nuget.org/api/v2
+
+  nuget Fake
+  github xyncro/build build.fsx
+
+// Test
+
+group Test
+
+  framework: >= net45
+  source http://nuget.org/api/v2
+
+  nuget Unquote
+  nuget xunit
+  nuget xunit.runner.console
+
