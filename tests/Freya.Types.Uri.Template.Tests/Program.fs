@@ -1,2 +1,2 @@
-module DummyMain
-let main argv = 0
+module DummyMain = let main _ = 0
+#nowarn "988"
