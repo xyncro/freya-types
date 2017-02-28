@@ -21,13 +21,23 @@ module internal Culture =
         [ CultureInfo ("en")
           CultureInfo ("de") ]
 
+#if !NETSTANDARD1_6
     let runWith culture =
         let current = Thread.CurrentThread.CurrentCulture
         Thread.CurrentThread.CurrentCulture <- culture
-        
+
         { new IDisposable with
             member __.Dispose() =
                 Thread.CurrentThread.CurrentCulture <- current }
+#else
+    let runWith culture =
+        let current = CultureInfo.CurrentCulture
+        CultureInfo.CurrentCulture <- culture
+
+        { new IDisposable with
+            member __.Dispose() =
+                CultureInfo.CurrentCulture <- current }
+#endif
 
 (* Tests *)
 
