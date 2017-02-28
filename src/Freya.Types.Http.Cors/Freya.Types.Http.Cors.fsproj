@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Summary>Types for working with the RFC-6454 HTTP Origin and W3C CORS specification</Summary>
+    <Description>Types for working with the RFC-6454 HTTP Origin and W3C CORS specification</Description>
     <Tags>$(Tags);cors;rfc6454;w3c</Tags>
   </PropertyGroup>
   <ItemGroup>

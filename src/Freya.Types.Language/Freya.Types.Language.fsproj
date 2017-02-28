@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Summary>Types for working with the RFC-5646 Language specification</Summary>
+    <Description>Types for working with the RFC-5646 Language specification</Description>
     <Tags>$(Tags);language;rfc5646</Tags>
   </PropertyGroup>
   <ItemGroup>

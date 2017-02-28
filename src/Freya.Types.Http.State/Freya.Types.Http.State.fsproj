@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Summary>Types for working with the HTTP State (Cookies) specification</Summary>
+    <Description>Types for working with the HTTP State (Cookies) specification</Description>
     <Tags>$(Tags);state;cookies</Tags>
   </PropertyGroup>
   <ItemGroup>

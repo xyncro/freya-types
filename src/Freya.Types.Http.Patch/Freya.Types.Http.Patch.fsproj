@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Summary>Types for working with the RFC-5789 HTTP Patch specification</Summary>
+    <Description>Types for working with the RFC-5789 HTTP Patch specification</Description>
     <Tags>$(Tags);patch;rfc5789;rfc7231</Tags>
   </PropertyGroup>
   <ItemGroup>
