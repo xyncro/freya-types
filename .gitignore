@@ -184,4 +184,9 @@ FakesAssemblies/
 # FSharp Lint
 *.FSharpLint
 
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+binaries/
+
 version.props
+quickbuild.ps1
