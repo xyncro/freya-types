@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Description>Types for working with the RFC-7230 HTTP specifications</Description>
+    <Description>Types and parsers for working with the HTTP specifications in RFC 7230</Description>
     <Tags>$(Tags);http;rfc7230</Tags>
   </PropertyGroup>
   <ItemGroup>

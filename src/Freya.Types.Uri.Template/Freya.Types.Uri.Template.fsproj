@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Description>Types for working with the RFC-6570 URI Template specification</Description>
+    <Description>Types and parsers for working with the URI Template specification in RFC 6570</Description>
     <Tags>$(Tags);uri;template;rfc6570</Tags>
   </PropertyGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
-    <Description>Core functions and types for working with the Freya Web type system</Description>
+    <Description>Core functions, types, and parsers for working with the Freya Web type system</Description>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Formatting.fs" />
