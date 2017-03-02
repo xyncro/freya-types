@@ -2,7 +2,7 @@
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Types and parsers for working with the URI specification in RFC 3986</Description>
-    <Tags>$(Tags);uri;rfc3986</Tags>
+    <PackageTags>$(PackageTags);uri;rfc3986</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Prelude.fs" />

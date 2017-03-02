@@ -2,7 +2,7 @@
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Types and parsers for working with the HTTP specifications in RFC 7230</Description>
-    <Tags>$(Tags);http;rfc7230</Tags>
+    <PackageTags>$(PackageTags);http;rfc7230</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Prelude.fs" />

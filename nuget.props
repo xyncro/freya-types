@@ -7,7 +7,7 @@
     <PackageLicenseUrl>https://github.com/xyncro/freya-types/blob/master/LICENSE.md</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/xyncro/freya-types</RepositoryUrl>
-    <Tags>functional;web;freya;types;f#;fsharp</Tags>
+    <PackageTags>$(PackageTags);functional;web;freya;types;f#;fsharp</PackageTags>
   </PropertyGroup>
   <Import Condition="Exists('version.props')" Project="version.props"/>
 </Project>

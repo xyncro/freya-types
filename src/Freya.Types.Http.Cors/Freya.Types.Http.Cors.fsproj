@@ -2,7 +2,7 @@
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Types and parsers for working with the HTTP Origin specification in RFC 6454 and the W3C CORS specification</Description>
-    <Tags>$(Tags);cors;rfc6454;w3c</Tags>
+    <PackageTags>$(PackageTags);cors;rfc6454;w3c</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs" />

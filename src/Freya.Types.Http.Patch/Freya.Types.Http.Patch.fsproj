@@ -2,7 +2,7 @@
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Types and parsers for working with the HTTP Patch specification in RFC 5789 and RFC 7231</Description>
-    <Tags>$(Tags);patch;rfc5789;rfc7231</Tags>
+    <PackageTags>$(PackageTags);patch;rfc5789;rfc7231</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs" />

@@ -2,7 +2,7 @@
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Types and parsers for working with the Language specification in RFC 5646</Description>
-    <Tags>$(Tags);language;rfc5646</Tags>
+    <PackageTags>$(PackageTags);language;rfc5646</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Grammar.fs" />
