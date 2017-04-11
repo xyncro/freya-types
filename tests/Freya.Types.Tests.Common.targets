@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net46</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.NET.Sdk" Version="1.*" PrivateAssets="All" />
+    <PackageReference Include="FSharp.Core" Version="4.1.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.*" />
+    <PackageReference Include="xunit" Version="2.2.*" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.*" />
+    <PackageReference Include="Unquote" Version="3.*" />
+    <PackageReference Include="FsCheck.Xunit" Version="2.*" />
+    <PackageReference Include="FsCheck" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(MSBuildThisFileDirectory)\..\src\Freya.Types\Freya.Types.fsproj" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)\Freya.Types.Tests\Freya.Types.Tests.fsproj" />
+  </ItemGroup>
+</Project>

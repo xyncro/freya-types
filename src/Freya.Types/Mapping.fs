@@ -21,11 +21,11 @@ module Mapping =
     let tryParse (mapping: Mapping<'a>) =
         fun s ->
             match run (mapping.Parse .>> eof) s with
-            | Success (x, _, _) -> Choice1Of2 x
-            | Failure (e, _, _) -> Choice2Of2 e
+            | Success (x, _, _) -> Result.Ok x
+            | Failure (e, _, _) -> Result.Error e
 
     let parse (mapping: Mapping<'a>) =
         fun s ->
             match tryParse mapping s with
-            | Choice1Of2 x -> x
-            | Choice2Of2 e -> failwith e
+            | Result.Ok x -> x
+            | Result.Error e -> failwith e
