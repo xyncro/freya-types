@@ -514,11 +514,21 @@ type Query =
                 i = 0x3d // =
              || i = 0x26 // &
 
+        let predicate i =
+             isPchar i
+          || isEqualsOrAmpersand i
+
+        let decoder =
+          Encoding.Percent.decoder ()
+
+        let encoder =
+          Encoding.Percent.encoder predicate
+
         let pairPartV =
-            manySatisfy (int >> isEqualsOrAmpersand >> not)
+            manySatisfy (int >> isEqualsOrAmpersand >> not) |>> decoder
 
         let pairPartP =
-            manySatisfy (int >> isEqualsOrAmpersand >> not)
+            manySatisfy (int >> isEqualsOrAmpersand >> not) |>> decoder
 
         let pairP =
             pairPartP .>>. opt(( skipChar '=') >>. ( pairPartV))
@@ -529,7 +539,7 @@ type Query =
             sepBy1 pairP skipAmp
         
         let pairF =
-            function | (k, Some v) -> Formatting.append k >> Formatting.append "=" >> Formatting.append v
+            function | (k, Some v) -> Formatting.append (encoder k) >> Formatting.append "=" >> Formatting.append (encoder v)
                      | (k, None) -> Formatting.append k
 
         let pairsF =
