@@ -256,6 +256,7 @@ let ``Query Expansion Renders Correctly`` () =
 [<Fact>]
 let ``Query Expansion Matches Correctly`` () =
     matches "/test{?who}" "/test?who=fred" [ Key "who", Atom "fred" ]
+    matches "/test{?who}" "/test?who=fred/wilma" [ Key "who", Atom "fred/wilma" ]
     matches "/test{?x,y}" "/test?x=1024&y=768" [ Key "x", Atom "1024"; Key "y", Atom "768" ]
     matches "/test{?x,y,empty}" "/test?x=1024&y=768&empty=" [ Key "x", Atom "1024"; Key "y", Atom "768"; Key "empty", Atom "" ]
     matches "/test{?list}" "/test?list=red,green,blue" [ Key "list", List [ "red"; "green"; "blue" ] ]
@@ -272,6 +273,8 @@ let ``Query Expansion Matches Correctly`` () =
     matches "/test{?list*}" "/test?" []
     matches "/test{?list*}" "/test?&" []
     matches "/test{?list*}" "/test?list" [ Key "list", List [""] ]
+    matches "/test{?list*}" "/test?path=foo/bar" [ Key "list", Keys [ ("path", "foo/bar") ] ]
+    matches "/test{?list*}" "/test?path=?;+/*()" [ Key "list", Keys [ ("path", "?;+/*()") ] ]
     //matches "/test{?list*}" "/test?list&" [ Key "list", List [""] ]
     matches "/test{?list*}" "/test?list=" [ Key "list", List [""] ]
     //matches "/test{?list*}" "/test?list=&" [ Key "list", List [""] ]
