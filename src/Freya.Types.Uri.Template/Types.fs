@@ -269,6 +269,33 @@ type UriTemplate =
         let idP =
             preturn ()
 
+        let isSubDelimSubset i =
+             i = 0x21 // !
+          || i = 0x24 // $
+          || i = 0x27 // '
+          || i = 0x28 // (
+          || i = 0x29 // )
+          || i = 0x2A // *
+          || i = 0x2B // +
+          || i = 0x3B // ;
+
+        let isPcharSubset i =
+             Grammar.isUnreserved i
+          || isSubDelimSubset i
+          || i = 0x40 // @
+          || i = 0x3a // :
+
+        let isQuery i =
+             isPcharSubset i
+          || i = 0x2F // /
+          || i = 0x3F // ?
+
+        let queryP =
+            let parser = Encoding.Percent.parser isQuery
+            let decoder = Encoding.Percent.decoder ()
+
+            parser |>> decoder
+
         let simpleP =
             let parser = Encoding.Percent.parser Grammar.isUnreserved
             let decoder = Encoding.Percent.decoder ()
@@ -349,9 +376,9 @@ type UriTemplate =
 
         let mapVar key separator =
             function | Some (Level3 Query), Some (Level4 Explode)
-                     | Some (Level3 QueryContinuation), Some (Level4 Explode) -> namedExplodedListOrKeysP simpleP separator key
+                     | Some (Level3 QueryContinuation), Some (Level4 Explode) -> namedExplodedListOrKeysP queryP separator key
                      | Some (Level3 Query), _
-                     | Some (Level3 QueryContinuation), _ -> namedP simpleP key
+                     | Some (Level3 QueryContinuation), _ -> namedP queryP key
                      | Some (Level2 _), Some (Level4 Explode) -> listOrKeysP reservedP separator key
                      | _, Some (Level4 Explode) -> listOrKeysP simpleP separator key
                      | Some (Level2 _), _ -> atomP reservedP key
