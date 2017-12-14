@@ -165,10 +165,37 @@ let ``Uri Formatting/Parsing`` () =
 
 [<Fact>]
 let ``Query Parse With Encoded Equals`` () =
-    let expectedResult = Some [ "one", Some ("two%3d") ]
+    let expectedResult = Some [ "one", Some ("two=") ]
     let query = Query.parse "one=two%3d"
     let queryPairs = query |> fst Query.pairs_
     Assert.Equal (expectedResult, queryPairs)
+
+[<Fact>]
+let ``Query Parse With Encoded Slash Value`` () =
+    let expectedResult = Some [ "one", Some ("two/") ]
+    let query = Query.parse "one=two%2f"
+    let queryPairs = query |> fst Query.pairs_
+    Assert.Equal (expectedResult, queryPairs)
+
+[<Fact>]
+let ``Query Parse With Encoded Slash Key`` () =
+    let expectedResult = Some [ "one/", Some ("two") ]
+    let query = Query.parse "one%2f=two"
+    let queryPairs = query |> fst Query.pairs_
+    Assert.Equal (expectedResult, queryPairs)
+
+[<Fact>]
+let ``Query Pairs Formats With Restricted Characters`` () =
+    let expectedResult = "one%3F=two%2Fthree%3F"
+    let queryPairs = ["one?", Some("two/three?")]
+    let query = (snd Query.pairs_) queryPairs |> string
+    Assert.Equal (expectedResult, query)
+
+[<Fact>]
+let ``Query Round Trip With Restricted Characters`` () =
+    let expectedResult = ["one", Some("two/three?")]
+    let queryPairs = (snd Query.pairs_) expectedResult |> (fst Query.pairs_)
+    Assert.Equal (Some expectedResult, queryPairs)
 
 [<Fact>]
 let ``Query Pairs``() =
