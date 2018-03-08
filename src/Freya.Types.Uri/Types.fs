@@ -10,12 +10,12 @@ open FParsec
    Types, parsers and formatters implemented to mirror the specification of 
    URI semantics as defined in RFC 3986.
 
-   Taken from [http://tools.ietFormatting.org/html/rfc3986] *)
+   Taken from [http://tools.ietf.org/html/rfc3986] *)
 
 (* Scheme
 
    Taken from RFC 3986, Section 3.1 Scheme
-   See [http://tools.ietFormatting.org/html/rfc3986#section-3.1] *)
+   See [http://tools.ietf.org/html/rfc3986#section-3.1] *)
 
 (* Section 3.1 *)
 
@@ -63,7 +63,7 @@ type Scheme =
 (* Authority
 
    Taken from RFC 3986, Section 3.2 Authority
-   See [http://tools.ietFormatting.org/html/rfc3986#section-3.2] *)
+   See [http://tools.ietf.org/html/rfc3986#section-3.2] *)
 
 (* Section 3.2 *)
 
@@ -265,7 +265,7 @@ type Authority =
 (* Path
 
    Taken from RFC 3986, Section 3.3 Path
-   See [http://tools.ietFormatting.org/html/rfc3986#section-3.3] *)
+   See [http://tools.ietf.org/html/rfc3986#section-3.3] *)
 
 [<AutoOpen>]
 module private Path =
@@ -464,7 +464,7 @@ type PathRootless =
 (* Query
 
    Taken from RFC 3986, Section 3.4 Query
-   See [http://tools.ietFormatting.org/html/rfc3986#section-3.4] *)
+   See [http://tools.ietf.org/html/rfc3986#section-3.4] *)
 
 type Query =
     | Query of string
@@ -571,7 +571,7 @@ type Query =
 (* Fragment
 
    Taken from RFC 3986, Section 3.5 Fragment
-   See [http://tools.ietFormatting.org/html/rfc3986#section-3.5] *)
+   See [http://tools.ietf.org/html/rfc3986#section-3.5] *)
 
 type Fragment =
     | Fragment of string
@@ -630,7 +630,7 @@ type Fragment =
 (* URI
 
    Taken from RFC 3986, Section 3 URI
-   See [http://tools.ietFormatting.org/html/rfc3986#section-3] *)
+   See [http://tools.ietf.org/html/rfc3986#section-3] *)
 
 (* Note: In the case of absolute paths in the hierarchy, which the parser
    will correctly determine, the type system cannot adequately protect
@@ -759,7 +759,7 @@ type Uri =
 (* Relative Reference
 
    Taken from RFC 3986, Section 4.2 Relative Reference
-   See [http://tools.ietFormatting.org/html/rfc3986#section-4.2] *)
+   See [http://tools.ietf.org/html/rfc3986#section-4.2] *)
 
 type RelativeReference =
     | RelativeReference of RelativePart * Query option * Fragment option
@@ -866,7 +866,7 @@ type RelativeReference =
 (* Absolute URI
 
    Taken from RFC 3986, Section 4.3 Absolute URI
-   See [http://tools.ietFormatting.org/html/rfc3986#section-4.3] *)
+   See [http://tools.ietf.org/html/rfc3986#section-4.3] *)
 
 type AbsoluteUri =
     | AbsoluteUri of Scheme * HierarchyPart * Query option
@@ -925,7 +925,7 @@ type AbsoluteUri =
 (* URI Reference
 
    Taken from RFC 3986, Section 4.1 URI Reference
-   See [http://tools.ietFormatting.org/html/rfc3986#section-4.1] *)
+   See [http://tools.ietf.org/html/rfc3986#section-4.1] *)
 
 type UriReference =
     | Uri of Uri
