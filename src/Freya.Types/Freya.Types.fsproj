@@ -1,4 +1,4 @@
-<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Core functions, types, and parsers for working with the Freya Web type system</Description>

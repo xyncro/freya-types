@@ -1,16 +1,8 @@
 <Project>
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard1.6</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
   </PropertyGroup>
-
-  <Import Project="..\nuget.props" />
-
-  <ItemGroup>
-    <PackageReference Include="FSharp.NET.Sdk" Version="1.*" PrivateAssets="All" />
-    <PackageReference Include="FSharp.Core" Version="4.1.0" />
-  </ItemGroup>
   <ItemGroup Condition="'$(TargetFrameworkIdentifier)' != '.NETStandard'">
     <PackageReference Include="FParsec" Version="1.0.2" />
   </ItemGroup>
