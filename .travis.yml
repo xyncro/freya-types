@@ -24,12 +24,12 @@ script:
   - dotnet --info
   - dotnet restore
   - dotnet build -c Release
-  - dotnet test -c Release tests\Freya.Types.Http.Tests\Freya.Types.Http.Tests.fsproj
-  - dotnet test -c Release tests\Freya.Types.Http.Cors.Tests\Freya.Types.Http.Cors.Tests.fsproj
-  - dotnet test -c Release tests\Freya.Types.Http.State.Tests\Freya.Types.Http.State.Tests.fsproj
-  - dotnet test -c Release tests\Freya.Types.Language.Tests\Freya.Types.Language.Tests.fsproj
-  - dotnet test -c Release tests\Freya.Types.Uri.Tests\Freya.Types.Uri.Tests.fsproj
-  - dotnet test -c Release tests\Freya.Types.Uri.Template.Tests\Freya.Types.Uri.Template.Tests.fsproj
+  - dotnet test -c Release tests/Freya.Types.Http.Tests/Freya.Types.Http.Tests.fsproj
+  - dotnet test -c Release tests/Freya.Types.Http.Cors.Tests/Freya.Types.Http.Cors.Tests.fsproj
+  - dotnet test -c Release tests/Freya.Types.Http.State.Tests/Freya.Types.Http.State.Tests.fsproj
+  - dotnet test -c Release tests/Freya.Types.Language.Tests/Freya.Types.Language.Tests.fsproj
+  - dotnet test -c Release tests/Freya.Types.Uri.Tests/Freya.Types.Uri.Tests.fsproj
+  - dotnet test -c Release tests/Freya.Types.Uri.Template.Tests/Freya.Types.Uri.Template.Tests.fsproj
   - dotnet pack -c Release --include-symbols
 
 branches:
