@@ -21,7 +21,7 @@ module internal Culture =
         [ CultureInfo ("en")
           CultureInfo ("de") ]
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD2_0
     let runWith culture =
         let current = Thread.CurrentThread.CurrentCulture
         Thread.CurrentThread.CurrentCulture <- culture

@@ -1,4 +1,4 @@
-<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Common.targets" />
   <PropertyGroup>
     <Description>Types and parsers for working with the HTTP State (Cookies) specification in RFC 6265</Description>

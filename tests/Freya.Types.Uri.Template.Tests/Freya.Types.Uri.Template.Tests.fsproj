@@ -1,8 +1,7 @@
-<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\Freya.Types.Tests.Common.targets" />
   <ItemGroup>
     <Compile Include="Types.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Freya.Types.Uri.Template\Freya.Types.Uri.Template.fsproj" />
