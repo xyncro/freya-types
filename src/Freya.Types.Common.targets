@@ -1,13 +1,9 @@
 <Project>
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' != '.NETStandard'">
-    <PackageReference Include="FParsec" Version="1.0.2" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETStandard'">
-    <PackageReference Include="FParsec" Version="1.0.3-alpha-*" />
-    <PackageReference Include="FParsecCS" Version="1.0.3-alpha-*" />
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.3.4" />
+    <PackageReference Include="FParsec" Version="1.0.3" />
   </ItemGroup>
 </Project>
